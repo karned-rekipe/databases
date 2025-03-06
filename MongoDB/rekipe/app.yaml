@@ -4,7 +4,7 @@ metadata:
   name: mongodb-rekipe
   namespace: argocd
 spec:
-  project: default
+  project: karned
   source:
     repoURL: https://charts.bitnami.com/bitnami
     targetRevision: 13.6.5
@@ -12,6 +12,9 @@ spec:
     helm:
       valueFiles:
         - https://raw.githubusercontent.com/karned-rekipe/databases/main/MongoDB/rekipe/values.yaml
+      values: |
+        auth:
+          existingSecret: mongodb-rekipe-secret
   destination:
     server: https://kubernetes.default.svc
     namespace: karned
