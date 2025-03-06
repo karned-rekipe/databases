@@ -1,0 +1,8 @@
+auth:
+  enabled: true
+  rootUser: "admin"
+  database: "rekipe"
+
+persistence:
+  enabled: true
+  size: 5Gi
